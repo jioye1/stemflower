@@ -1,10 +1,10 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
-    mode: 'production',
-    entry: './src/index.js',
+    // Other webpack config settings
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'public'), // Change this line to 'public'
         filename: 'bundle.js'
-    },
-}
+    }
+    // Other settings
+};
