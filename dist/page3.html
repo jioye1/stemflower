@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Flower by Up4TheChallenge</title>
+    <link rel="stylesheet" href="Assets/page3.css">
+</head>
+<body>
+    <textarea class="centered-textbox" id="dynamic-placeholder" placeholder="[Name of Prototype] provided a way for [Name of Users] to [Needs/Insights]."></textarea>
+
+    <a href="page4.html">
+        <button>Next→</button>
+    </a>
+
+    <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.querySelector('button');
+            const audio = document.getElementById('hoverSound');
+
+            button.addEventListener('mouseover', function() {
+                audio.play();
+            });
+
+            button.addEventListener('mouseout', function() {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+
+            // Update the placeholder text dynamically from localStorage
+            const prototypeName = localStorage.getItem('textPage2'); // Get the prototype name
+            const beneficiaries = localStorage.getItem('textPage2.5'); // Get the beneficiaries
+            const textarea = document.querySelector('.centered-textbox');
+            if (prototypeName && beneficiaries) {
+                textarea.placeholder = `${prototypeName} provided a way for ${beneficiaries} to [Needs/Insights].`;
+            }
+
+            // Save the text
+            button.addEventListener('click', function() {
+                localStorage.setItem('textPage3', textarea.value); // Store textarea content in local storage
+            });
+        });
+
+    </script>
+    <script src="bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEMFlower</title>
+    <link rel="stylesheet" href="Assets/sharingPage.css">
+</head>
+<body>
+    <button id="uploadButton">Upload Your Flower</button>
+    <a href="garden.html" style="display: none;" id="nextButton">
+        <button>Next→</button>
+    </a>
+
+    <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+    <script>
+        
+            
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.querySelector('button');
+            const audio = document.getElementById('hoverSound');
+
+            button.addEventListener('mouseover', function() {
+                audio.play();
+            });
+
+            button.addEventListener('mouseout', function() {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const shareButton = document.getElementById('uploadButton');
+            const nextButton = document.getElementById('nextButton');
+
+            shareButton.addEventListener('click', function() {
+                nextButton.style.display = 'block'; // Show the Next button
+            });
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const textFromPage2 = localStorage.getItem('textPage2');
+            const textFromPage2_5 = localStorage.getItem('textPage2.5');
+            const textFromPage3 = localStorage.getItem('textPage3');
+            const textFromPage4 = localStorage.getItem('textPage4');
+            const textFromPage5 = localStorage.getItem('textPage5');
+            const textFromPage6 = localStorage.getItem('textPage6');
+            const textFromPage7 = localStorage.getItem('textPage7');
+            const textFromPage8 = localStorage.getItem('textPage8');
+            const textFromPage9 = localStorage.getItem('textPage9');
+            const textFromPage10 = localStorage.getItem('textPage10');
+            const textFromPageAuthor = localStorage.getItem('textPageAuthor')
+            const stem1 = localStorage.getItem('textArea1');
+            const stem2 = localStorage.getItem('textArea2');
+            const stem3 = localStorage.getItem('textArea3');
+            const stem4 = localStorage.getItem('textArea4');
+            const stem5 = localStorage.getItem('textArea5');
+            console.log('Text from Page 2:', textFromPage2);
+            console.log('Text from Page 2.5:', textFromPage2_5);
+            console.log('Text from Page 3:', textFromPage3);
+            console.log('Text from Page 4:', textFromPage4);
+            console.log('Text from Page 5:', textFromPage5);
+            console.log('Text from Page 6:', textFromPage6);
+            console.log('Text from Page 7:', textFromPage7);
+            console.log('Text from Page 8:', textFromPage8);
+            console.log('Text from Page 9:', textFromPage9);
+            console.log('Text from Page 10:', textFromPage10);
+            console.log('STEM1:', stem1);
+            console.log('STEM2:', stem2);
+            console.log('STEM3:', stem3);
+            console.log('STEM4:', stem4);
+            console.log('STEM5:', stem5);
+            console.log('Author:', textFromPageAuthor)
+        });
+
+    </script>
+    <script src="bundle.js"></script>
+</body>
+</html>

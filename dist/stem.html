@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Flower by Up4TheChallenge</title>
+    <link rel="stylesheet" href="Assets/stem.css">
+</head>
+<body>
+    <div class="container">
+        <textarea class="root-textarea" id="textarea1"></textarea>
+        <textarea class="root-textarea" id="textarea2"></textarea>
+        <textarea class="root-textarea" id="textarea3"></textarea>
+        <textarea class="root-textarea" id="textarea4"></textarea>
+        <textarea class="root-textarea" id="textarea5"></textarea>
+    </div>
+
+    <div class="button-container">
+        <a href="author.html">
+            <button id="saveButton">Next →</button>
+        </a>
+    </div>
+
+    <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+    <script src="bundle.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('saveButton');
+            const audio = document.getElementById('hoverSound');
+            const textareas = document.querySelectorAll('.root-textarea');
+
+            button.addEventListener('mouseover', function() {
+                audio.play();
+            });
+
+            button.addEventListener('mouseout', function() {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+
+            button.addEventListener('click', function() {
+                // Save each textarea's content in localStorage with a unique key
+                textareas.forEach((textarea, index) => {
+                    localStorage.setItem('textArea' + (index + 1), textarea.value);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

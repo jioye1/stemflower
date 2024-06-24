@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Flower by Up4TheChallenge</title>
+    <link rel="stylesheet" href="Assets/petals.css">
+</head>
+<body>
+    <a href="Stem.html">
+        <button>Next→</button>
+    </a>
+
+    <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.querySelector('button');
+            const audio = document.getElementById('hoverSound');
+
+            button.addEventListener('mouseover', function() {
+                audio.play();
+            });
+
+            button.addEventListener('mouseout', function() {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+        });
+
+        // save the text
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.querySelector('button');
+            const textarea = document.querySelector('.centered-textbox');
+
+            button.addEventListener('click', function() {
+                localStorage.setItem('textPage5', textarea.value); // Store textarea content in local storage
+            });
+        });
+    </script>
+
+    <script src="bundle.js"></script>
+</body>
+</html>

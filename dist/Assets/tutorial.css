@@ -1,0 +1,54 @@
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(fonts/Montserrat-Light.ttf);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: Montserrat-Light, sans-serif;
+    animation: fadeIn 1s ease-out;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Establishes the flex container */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    min-height: 100vh; /* Ensures at least the full viewport height */
+    background: #000; /* Optional: sets a black background */
+}
+
+
+video {
+    /* Set exact dimensions for the video */
+    width: 640px;
+    height: 480px;
+    z-index: 1;
+}
+
+button {
+    font-family: Montserrat-Light, sans-serif;
+    position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
+    bottom: 20px; /* 20px from the bottom */
+    right: 20px; /* 20px from the right */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffffff; /* Light beige background */
+    border: 2px solid #000000; /* Golden border */
+    color: #000000; /* Green text */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, font-size 0.3s ease; 
+}
+
+button:hover {
+    transform: scale(1.1); /* Enlarges the button by 10% */
+    font-size: 18px; /* Increases font size */
+}

@@ -1,0 +1,72 @@
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(fonts/Montserrat-Light.ttf);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Set a background color and style the body */
+body {
+    font-family: Montserrat-Light, sans-serif;
+    animation: fadeIn 1s ease-out; 
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style the header */
+h1 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Container for the project details */
+#projectDetailsContainer {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Individual project card */
+.project {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.2s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+/* Project title */
+.project h1 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+    color: #2c3e50;
+}
+
+/* Project details */
+.project p {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #555;
+}

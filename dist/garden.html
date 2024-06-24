@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Flower by Up4TheChallenge</title>
+    <link rel="stylesheet" href="Assets/gardenPage.css">
+</head>
+
+<body>
+
+    <div id="gardenContainer"></div>
+
+    <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.querySelector('button');
+            const audio = document.getElementById('hoverSound');
+
+            button.addEventListener('mouseover', function() {
+                audio.play();
+            });
+
+            button.addEventListener('mouseout', function() {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+        });
+    </script>
+    <script src="bundle.js"></script>
+</body>
+</html>

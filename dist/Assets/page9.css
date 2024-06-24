@@ -1,0 +1,100 @@
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(fonts/Montserrat-Light.ttf);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: Montserrat-Light, sans-serif;
+    animation: fadeIn 1s ease-out; 
+    background-image: url(images/flower5.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    font-family: 'Shantell Sans', Arial, sans-serif; /* Uniform font styling */
+    box-sizing: border-box; /* Includes padding and border in the element's dimensions */
+}
+
+/* Apply box-sizing to all elements */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.container {
+    position: relative; /* Set relative positioning to enable absolute positioning of children */
+}
+
+.centered-textbox {
+    font-family: Montserrat-Light, sans-serif;
+    width: 90%; /* Aiming for full utilization of the viewport width */
+    min-width: 550px; /* Ensures it doesn't get too small on narrow screens */
+    max-width: 800px; /* Prevents it from becoming excessively wide */
+    height: 130px; /* Fixed height for consistency */
+    padding: 10px; /* Padding inside the textbox */
+    font-size: 16px; /* Font size for readability */
+    border: 2px solid #262626; /* Custom green border */
+    border-radius: 5px; /* Rounded corners */
+    resize: none; /* Disables resizing */
+    font-family: 'Shantell Sans', Arial, sans-serif; /* Font family with fallback */
+    margin-top: -200px; /* Adjust this value to move the textbox up or down */
+}
+
+button {
+    font-family: Montserrat-Light, sans-serif;
+    font-family: 'Shantell Sans';
+    position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
+    bottom: 20px; /* 20px from the bottom */
+    right: 20px; /* 20px from the right */
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #ffffff; /* Light beige background */
+    border: 2px solid #262626; /* Golden border */
+    color: #262626; /* Green text */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, font-size 0.3s ease; 
+}
+
+button:hover {
+    transform: scale(1.1); /* Enlarges the button by 10% */
+    font-size: 35px; /* Increases font size */
+}
+
+#watering {
+    display: none; /* Hide the image initially */
+    position: absolute; /* Absolute positioning relative to the .container */
+    top: 140px; /* Adjust to position below the textbox */
+    left: -20px; /* Adjust to move slightly left */
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-out forwards;
+}

@@ -1,0 +1,65 @@
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(fonts/Montserrat-Light.ttf);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: Montserrat-Light, sans-serif;
+    animation: fadeIn 1s ease-out; 
+    background-image: url(images/sharingPage.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Make the body take up the full height of the viewport */
+    position: relative; /* Set positioning context for absolute positioned children */
+}
+
+
+
+/* Position the 'Upload Your Flower' button slightly to the right of the middle */
+#uploadButton {
+    position: absolute;
+    right: 5%; /* Adjusted to not be completely to the right, slightly off-center to the right */
+    top: 50%; /* Align the top of the button to the middle of the viewport */
+    transform: translateY(-50%); /* Offset the button by half its height to truly center it vertically */
+    padding: 10px 20px; /* Add some padding for better appearance */
+    cursor: pointer; /* Change the cursor to pointer when hovering over the button */
+}
+
+/* Position the 'Next' button near the bottom right, but not completely to the edge */
+#nextButton {
+    position: absolute;
+    right: 3%; /* Consistent with the Upload button for visual alignment */
+    bottom: 20px; /* 20px from the bottom edge of the viewport */
+    display: block; /* Ensure the button is visible */
+}
+
+/* Additional styling for buttons for a more appealing look */
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #ffffff; /* Light beige background */
+    border: 2px solid #262626; /* Golden border */
+    color: #262626; /* Green text */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, font-size 0.3s ease; 
+}
+
+button:hover {
+    transform: scale(1.1); /* Enlarges the button by 10% */
+    font-size: 25px; /* Increases font size */
+}

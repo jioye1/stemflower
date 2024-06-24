@@ -1,0 +1,74 @@
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(fonts/Montserrat-Light.ttf);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat-Light', Arial, sans-serif;
+    position: relative;
+    overflow-x: hidden; /* Hide horizontal scroll */
+}
+
+body {
+    animation: fadeIn 1s ease-out; 
+    background-image: url(images/stem.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.container {
+    position: fixed; /* Use fixed to ensure it's always at the bottom */
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 5 5px; /* Add some padding on the sides */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.root-textarea {
+    flex-grow: 1; /* Allows each textarea to grow and fill the space */
+    margin: 0 5px; /* Space between each textarea */
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
+    resize: none;
+}
+
+.button-container {
+    position: fixed; /* Use fixed to place it relative to the viewport */
+    right: 50px; /* Adjust the distance from the right */
+    top: 45%; /* Adjust according to the flower's position */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: #ffffff;
+    border: 2px solid #262626;
+    color: #262626;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1);
+}

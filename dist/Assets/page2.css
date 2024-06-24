@@ -1,0 +1,76 @@
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(fonts/Montserrat-Light.ttf);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: Montserrat-Light, sans-serif;
+    animation: fadeIn 1s ease-out; 
+    background-image: url(images/projectTitle.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    font-family: 'Shantell Sans', Arial, sans-serif; /* Uniform font styling */
+    box-sizing: border-box; /* Includes padding and border in the element's dimensions */
+}
+
+/* Apply box-sizing to all elements */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.centered-textbox {
+    font-family: Montserrat-Light, sans-serif;
+    width: 90%; /* Aiming for full utilization of the viewport width */
+    min-width: 550px; /* Ensures it doesn't get too small on narrow screens */
+    max-width: 800px; /* Prevents it from becoming excessively wide */
+    height: 180px; /* Fixed height for consistency */
+    padding: 10px; /* Padding inside the textbox */
+    font-size: 16px; /* Font size for readability */
+    border: 2px solid #41b100; /* Custom green border */
+    border-radius: 5px; /* Rounded corners */
+    resize: none; /* Disables resizing */
+    font-family: 'Shantell Sans', Arial, sans-serif; /* Font family with fallback */
+}
+
+button {
+    font-family: Montserrat-Light, sans-serif;
+    font-family: 'Shantell Sans';
+    position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
+    bottom: 20px; /* 20px from the bottom */
+    right: 20px; /* 20px from the right */
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #ffffff; /* Light beige background */
+    border: 2px solid #41b100; /* Golden border */
+    color: #41b100; /* Green text */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, font-size 0.3s ease; 
+}
+
+button:hover {
+    transform: scale(1.1); /* Enlarges the button by 10% */
+    font-size: 35px; /* Increases font size */
+}

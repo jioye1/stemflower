@@ -1,0 +1,47 @@
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(fonts/Montserrat-Light.ttf);
+}
+
+body{
+    font-family: Montserrat-Light, sans-serif;
+    background-image: url(images/mainScreen.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+html, body {
+    height: 100%; /* Ensures the full height of the viewport is used */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Sets the display mode to flex to utilize flexbox properties */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Ensures text and inline elements like <a> are centered */
+    
+}
+
+a {
+    text-decoration: none; /* Optional: Removes underline from the anchor tag */
+}
+
+button {
+    font-family: "Shantell Sans";
+    padding: 10px 20px; /* Adds padding inside the button for better aesthetics */
+    font-size: 25px; /* Sets the font size of the button text */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+    background-color: #ff8000; /* Sets the background color of the button */
+    border: 2px solid #d77717; /* Sets the border width and color */
+    font-weight: 600; /* Sets the font weight */
+    color: #fff; /* Sets the text color */
+    outline: none; /* Removes the focus outline, optional for aesthetics */
+    border-radius: 18px;
+    transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth transition for transform and font size */
+}
+
+button:hover {
+    transform: scale(1.1); /* Enlarges the button by 10% */
+    font-size: 30px; /* Increases font size */
+}
