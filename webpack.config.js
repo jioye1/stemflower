@@ -5,6 +5,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'public'), // Change this line to 'public'
         filename: 'bundle.js'
-    }
+    },
     // Other settings
+    mode:'production'
 };
