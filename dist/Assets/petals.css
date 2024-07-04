@@ -15,7 +15,7 @@
 body {
     font-family: Montserrat-Light, sans-serif;
     animation: fadeIn 1s ease-out; 
-    background-image: url(images/petals.png);
+    background-image: url(images/petals.png); /* Updated to use the correct image for the page background */
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -36,6 +36,46 @@ html, body {
 /* Apply box-sizing to all elements */
 *, *::before, *::after {
     box-sizing: inherit;
+}
+
+/* Container for the image and the textbox */
+.flower-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+}
+
+/* Styles specific to the flower image */
+img[src="Assets/images/flowerPetals.png"] {
+    width: 350px; /* Adjusted width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+/* Styles for the textbox */
+.textbox {
+    visibility: hidden; /* Hide by default */
+    position: absolute;
+    top: -85%; /* Position above the image */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: visibility 0.3s ease;
+}
+
+/* Hover effect on container to show textbox */
+.flower-container:hover .textbox {
+    visibility: visible;
+}
+
+/* Enlarge image on hover */
+.flower-container:hover img {
+    transform: scale(1.1);
 }
 
 button {
@@ -59,4 +99,3 @@ button:hover {
     transform: scale(1.1); /* Enlarges the button by 10% */
     font-size: 35px; /* Increases font size */
 }
-
