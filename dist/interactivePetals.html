@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Flower by Up4TheChallenge</title>
+    <link rel="stylesheet" href="Assets/petals.css">
+</head>
+<body>
+    <div class="flower-container">
+        <img src="Assets/images/flowerPetals.png" alt="Flower Petals">
+        <div class="textbox"></div>
+    </div>
+    
+    <a href="stem.html">
+        <button>Next→</button>
+    </a>
+
+    <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.querySelector('button');
+            const audio = document.getElementById('hoverSound');
+            const textbox = document.querySelector('.textbox');
+
+            // Retrieve text from local storage and display it in the textbox
+            const textPage4 = localStorage.getItem('textPage4') || 'textPage4';
+            const textPage5 = localStorage.getItem('textPage5') || 'textPage5';
+            const textPage6 = localStorage.getItem('textPage6') || 'textPage6';
+            const textPage7 = localStorage.getItem('textPage7') || 'textPage7';
+            const textPage8 = localStorage.getItem('textPage8') || 'textPage8';
+            const textPage9 = localStorage.getItem('textPage9') || 'textPage9';
+            const textPage10 = localStorage.getItem('textPage10') || 'textPage10';
+
+            textbox.innerHTML = `
+                Here are the social outcomes achieved by your design:<br>
+                ${textPage4}<br>
+                ${textPage5}<br>
+                ${textPage6}<br>
+                ${textPage7}<br>
+                ${textPage8}<br>
+                ${textPage9}<br>
+                ${textPage10}<br>
+            `;
+
+            button.addEventListener('mouseover', function() {
+                audio.play();
+            });
+
+            button.addEventListener('mouseout', function() {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+        });
+    </script>
+
+    <script src="bundle.js"></script>
+</body>
+</html>
