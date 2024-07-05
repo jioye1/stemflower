@@ -70,3 +70,24 @@ h1 {
     margin: 10px 0;
     color: #555;
 }
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+#photo1, #photo2 {
+    display: block;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 16px;
+}
