@@ -71,3 +71,20 @@ button:hover {
 .project-container:hover .project-info {
     display: block;
 }
+
+#nextGardenButton {
+    font-family: Montserrat-Light, sans-serif;
+    font-family: 'Shantell Sans';
+    position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
+    bottom: 20px; /* 20px from the bottom */
+    right: 20px; /* 20px from the right */
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #ffffff; /* Light beige background */
+    border: 2px solid #262626; /* Golden border */
+    color: #262626; /* Green text */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, font-size 0.3s ease; 
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Summary</title>
+    <title>STEM Flower by Up4TheChallenge</title>
     <link rel="stylesheet" href="Assets/summary.css">
 </head>
 <body>
@@ -18,14 +18,51 @@
     <br>
 
     <h1>Prototype Pictures</h1>
-    <div class="image-container">
-        <img src="Assets/images/selfDrivingCars.png" height="600px" id="photo1">
-        <div class="image-caption">Project Title: Self Driving Cars</div>
+    <div class="gallery-container">
+        <div class="gallery-slide">
+            <div class="image-container">
+                <img src="Assets/images/selfDrivingCars.png" height="600px" id="photo1">
+                <div class="image-caption">Project Title: Self Driving Cars</div>
+            </div>
+            <div class="image-container">
+                <img src="Assets/images/automaticWatering.jpg" height="600px" id="photo2">
+                <div class="image-caption">Project Title: Automatic Watering Device</div>
+            </div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </div>
-    <div class="image-container">
-        <img src="Assets/images/automaticWatering.jpg" height="600px" id="photo2">
-        <div class="image-caption">Project Title: Automatic Watering Device</div>
-    </div>
+    <br>
+    <br>
+    <button id="browseProjectsBtn">Browse all Projects</button>
+
+    <script>
+        // Image gallery script
+        let currentSlideIndex = 0;
+
+        function changeSlide(n) {
+            showSlide(currentSlideIndex += n);
+        }
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.image-container');
+            if (n >= slides.length) { currentSlideIndex = 0; }
+            if (n < 0) { currentSlideIndex = slides.length - 1; }
+            slides.forEach((slide, index) => {
+                slide.style.display = index === currentSlideIndex ? 'block' : 'none';
+            });
+        }
+
+        // Call showSlide to initialize the gallery
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlideIndex); // Show the initial slide
+        });
+
+        // Event listener for the "Browse all Projects" button
+        document.getElementById('browseProjectsBtn').addEventListener('click', () => {
+            window.location.href = 'summaryNav.html';
+        });
+    </script>
     <script src="bundle.js"></script>
 </body>
 </html>
