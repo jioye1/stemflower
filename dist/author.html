@@ -10,39 +10,41 @@
     
     <textarea class="centered-textbox" placeholder="Enter name here..."></textarea>
 
-
     <a href="sharing.html">
         <button>Next→</button>
     </a>
 
+    <a href="stem.html" class="back-button">
+        <button>←Back</button>
+    </a>
 
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
     <script>
-    
         document.addEventListener('DOMContentLoaded', function() {
-            const button = document.querySelector('button');
+            const buttons = document.querySelectorAll('button');
             const audio = document.getElementById('hoverSound');
 
-            button.addEventListener('mouseover', function() {
-                audio.play();
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    audio.play();
+                });
+
+                button.addEventListener('mouseout', function() {
+                    audio.pause();
+                    audio.currentTime = 0;
+                });
             });
 
-            button.addEventListener('mouseout', function() {
-                audio.pause();
-                audio.currentTime = 0;
-            });
-        }); 
-        
-        // save the text
-        document.addEventListener('DOMContentLoaded', function() {
-            const button = document.querySelector('button');
-            const textarea = document.querySelector('.centered-textbox');
+            // save the text
+            document.addEventListener('DOMContentLoaded', function() {
+                const button = document.querySelector('button');
+                const textarea = document.querySelector('.centered-textbox');
 
-            button.addEventListener('click', function() {
-                localStorage.setItem('textPageAuthor', textarea.value); // Store textarea content in local storage
+                button.addEventListener('click', function() {
+                    localStorage.setItem('textPageAuthor', textarea.value); // Store textarea content in local storage
+                });
             });
         });
-
     </script>
 
     <script src="bundle.js"></script>

@@ -8,27 +8,33 @@
 </head>
 <body>
     <div class="container">
-        <textarea class="centered-textbox" placeholder="Enter one social outcome"></textarea>
+        <textarea class="centered-textbox" placeholder="Enter one social outcome. If no more can be added, simply press the button to continue."></textarea>
         <img id="watering" src="Assets/images/watering.gif">
     </div>
 
-    <a href="page10.html">
+    <a href="page10.html" class="next-button">
         <button>Add More</button>
+    </a>
+
+    <a href="page8.html" class="back-button">
+        <button>←Back</button>
     </a>
 
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const button = document.querySelector('button');
+            const buttons = document.querySelectorAll('button');
             const audio = document.getElementById('hoverSound');
 
-            button.addEventListener('mouseover', function() {
-                audio.play();
-            });
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    audio.play();
+                });
 
-            button.addEventListener('mouseout', function() {
-                audio.pause();
-                audio.currentTime = 0;
+                button.addEventListener('mouseout', function() {
+                    audio.pause();
+                    audio.currentTime = 0;
+                });
             });
 
             const wateringImg = document.getElementById('watering');
@@ -36,17 +42,17 @@
             setTimeout(() => {
                 wateringImg.style.display = 'block'; // Show the image
                 setTimeout(() => {
-                    wateringImg.classList.add('fade-out'); // Add the fade-out class after 1 second
+                    wateringImg.classList.add('fade-out'); // Add the fade-out class after 1.5 seconds
                 }, 1500);
             }, 0);
         });
 
         // save the text
         document.addEventListener('DOMContentLoaded', function() {
-            const button = document.querySelector('button');
+            const nextButton = document.querySelector('.next-button button');
             const textarea = document.querySelector('.centered-textbox');
 
-            button.addEventListener('click', function() {
+            nextButton.addEventListener('click', function() {
                 localStorage.setItem('textPage9', textarea.value); // Store textarea content in local storage
             });
         });

@@ -12,14 +12,18 @@
         <div class="textbox"></div>
     </div>
     
-    <a href="stem.html">
+    <a href="stem.html" class="next-button">
         <button>Next→</button>
+    </a>
+
+    <a href="page10.html" class="back-button">
+        <button>←Back</button>
     </a>
 
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const button = document.querySelector('button');
+            const buttons = document.querySelectorAll('button');
             const audio = document.getElementById('hoverSound');
             const textbox = document.querySelector('.textbox');
 
@@ -43,13 +47,15 @@
                 ${textPage10}<br>
             `;
 
-            button.addEventListener('mouseover', function() {
-                audio.play();
-            });
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    audio.play();
+                });
 
-            button.addEventListener('mouseout', function() {
-                audio.pause();
-                audio.currentTime = 0;
+                button.addEventListener('mouseout', function() {
+                    audio.pause();
+                    audio.currentTime = 0;
+                });
             });
         });
     </script>

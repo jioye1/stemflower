@@ -21,6 +21,12 @@
         </a>
     </div>
 
+    <div class="button-container-left">
+        <a href="interactivePetals.html">
+            <button id="backButton">← Back</button>
+        </a>
+    </div>
+
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
     <script src="bundle.js"></script>
     <script>
@@ -43,6 +49,16 @@
                 textareas.forEach((textarea, index) => {
                     localStorage.setItem('textArea' + (index + 1), textarea.value);
                 });
+            });
+
+            const backButton = document.getElementById('backButton');
+            backButton.addEventListener('mouseover', function() {
+                audio.play();
+            });
+
+            backButton.addEventListener('mouseout', function() {
+                audio.pause();
+                audio.currentTime = 0;
             });
         });
     </script>

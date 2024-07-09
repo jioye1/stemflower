@@ -22,7 +22,6 @@ body {
     background-size: cover;
 }
 
-
 html, body {
     height: 100%;
     margin: 0;
@@ -56,9 +55,6 @@ html, body {
 button {
     font-family: Montserrat-Light, sans-serif;
     font-family: 'Shantell Sans';
-    position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
-    bottom: 20px; /* 20px from the bottom */
-    right: 20px; /* 20px from the right */
     padding: 10px 20px;
     font-size: 30px;
     font-weight: 600;
@@ -75,6 +71,14 @@ button:hover {
     font-size: 35px; /* Increases font size */
 }
 
+.next-button {
+    position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
+    bottom: 20px; /* 20px from the bottom */
+    right: 20px; /* 20px from the right */
+}
 
-
-
+.back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}

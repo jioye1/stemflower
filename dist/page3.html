@@ -10,22 +10,28 @@
     <textarea class="centered-textbox" id="dynamic-placeholder" placeholder="[Name of Prototype] provided a way for [Name of Users] to [Needs/Insights]."></textarea>
 
     <a href="page4.html">
-        <button>Next→</button>
+        <button class="next-button">Next→</button>
+    </a>
+
+    <a href="page2.5.html" class="back-button">
+        <button>←Back</button>
     </a>
 
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const button = document.querySelector('button');
+            const buttons = document.querySelectorAll('button');
             const audio = document.getElementById('hoverSound');
 
-            button.addEventListener('mouseover', function() {
-                audio.play();
-            });
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    audio.play();
+                });
 
-            button.addEventListener('mouseout', function() {
-                audio.pause();
-                audio.currentTime = 0;
+                button.addEventListener('mouseout', function() {
+                    audio.pause();
+                    audio.currentTime = 0;
+                });
             });
 
             // Update the placeholder text dynamically from localStorage
@@ -37,11 +43,11 @@
             }
 
             // Save the text
-            button.addEventListener('click', function() {
+            const nextButton = document.querySelector('.next-button');
+            nextButton.addEventListener('click', function() {
                 localStorage.setItem('textPage3', textarea.value); // Store textarea content in local storage
             });
         });
-
     </script>
     <script src="bundle.js"></script>
 </body>

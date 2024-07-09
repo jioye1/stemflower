@@ -58,6 +58,12 @@ body {
     top: 45%; /* Adjust according to the flower's position */
 }
 
+.button-container-left {
+    position: fixed; /* Use fixed to place it relative to the viewport */
+    left: 50px; /* Adjust the distance from the left */
+    top: 45%; /* Adjust according to the flower's position */
+}
+
 button {
     padding: 10px 20px;
     font-size: 30px;

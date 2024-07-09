@@ -22,7 +22,6 @@ body {
     background-size: cover;
 }
 
-
 html, body {
     height: 100%;
     margin: 0;
@@ -64,7 +63,7 @@ button {
     font-weight: 600;
     cursor: pointer;
     background-color: #ffffff; /* Light beige background */
-    border: 2px solid #41b100; /* Golden border */
+    border: 2px solid #41b100; /* Green border */
     color: #41b100; /* Green text */
     border-radius: 8px; /* Rounded corners */
     transition: transform 0.3s ease, font-size 0.3s ease; 
@@ -73,4 +72,15 @@ button {
 button:hover {
     transform: scale(1.1); /* Enlarges the button by 10% */
     font-size: 35px; /* Increases font size */
+}
+
+a.back-button {
+    position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
+    bottom: 20px; /* 20px from the bottom */
+    left: 20px; /* 20px from the left */
+}
+
+a.back-button button {
+    right: auto; /* Override right positioning */
+    left: 20px; /* Align the button to the left */
 }
