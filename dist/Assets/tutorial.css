@@ -28,8 +28,8 @@ body {
 
 video {
     /* Set exact dimensions for the video */
-    width: 640px;
-    height: 480px;
+    width: 960px;
+    height: 540px;
     z-index: 1;
 }
 
