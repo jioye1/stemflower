@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEM Flower by Up4TheChallenge</title>
+    <!-- Link to the external stylesheet for styling the garden page -->
     <link rel="stylesheet" href="Assets/gardenPage2.css">
 </head>
 <body>
+    <!-- Container for the garden elements -->
     <div id="gardenContainer"></div>
 
+    <!-- Link to the next garden page with a button -->
     <a href="garden.html">
         <button id="nextGardenButton">Next Garden</button>
     </a>
 
+    <!-- Audio element for the hover sound effect -->
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+
     <script>
+        // Event listener to play/pause the audio on button hover
         document.addEventListener('DOMContentLoaded', function() {
             const button = document.querySelector('button');
             const audio = document.getElementById('hoverSound');
@@ -28,7 +34,7 @@
                 audio.currentTime = 0;
             });
 
-            // JSON data
+            // JSON data containing project details
             const projects = [
                 {
                     "Document ID": "rUpDyXFflY7nc4faHldT",

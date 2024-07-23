@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEM Flower by Up4TheChallenge</title>
+    <!-- Link to the external stylesheet for styling the page -->
     <link rel="stylesheet" href="Assets/stem.css">
 </head>
 <body>
     <div class="container">
+        <!-- Text areas for user input -->
         <textarea class="root-textarea" id="textarea1"></textarea>
         <textarea class="root-textarea" id="textarea2"></textarea>
         <textarea class="root-textarea" id="textarea3"></textarea>
@@ -16,20 +18,26 @@
     </div>
 
     <div class="button-container">
+        <!-- Link to the next page with a button -->
         <a href="author.html">
             <button id="saveButton">Next →</button>
         </a>
     </div>
 
     <div class="button-container-left">
+        <!-- Link to the previous page with a button -->
         <a href="interactivePetals.html">
             <button id="backButton">← Back</button>
         </a>
     </div>
 
+    <!-- Audio element for the hover sound effect -->
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+
+    <!-- Link to the bundled JavaScript file -->
     <script src="bundle.js"></script>
     <script>
+        // Event listener to play/pause the audio on button hover
         document.addEventListener('DOMContentLoaded', function() {
             const button = document.getElementById('saveButton');
             const audio = document.getElementById('hoverSound');

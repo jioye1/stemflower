@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial</title>
+    <!-- Link to the external stylesheet for styling the page -->
     <link rel="stylesheet" href="Assets/tutorial.css">
 </head>
 <body>
-    
+    <!-- Video element for the tutorial video -->
     <video controls loop id="tutorialVideo">
         <source src="Assets/videos/stemflower_introduction.mp4" type="video/mp4">
     </video>
+    <!-- Link to the next page with a button -->
     <a href="page2.html">
         <button>Continue</button>
     </a>
 
-
+    <!-- Audio element for the hover sound effect -->
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+
     <script>
-    
+        // Event listener to play/pause the audio on button hover
         document.addEventListener('DOMContentLoaded', function() {
             const button = document.querySelector('button');
             const audio = document.getElementById('hoverSound');

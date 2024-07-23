@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEM Flower by Up4TheChallenge</title>
+    <!-- Link to the external stylesheet for styling the page -->
     <link rel="stylesheet" href="Assets/summary.css">
 </head>
 <body>
+    <!-- Header for the projects section -->
     <h1>Projects by LIT at McMaster University</h1>
+    <!-- Container for project details -->
     <div id="projectDetailsContainer"></div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br><br><br>
 
+    <!-- Header for the prototype pictures section -->
     <h1>Prototype Pictures</h1>
+    <!-- Container for the image gallery -->
     <div class="gallery-container">
         <div class="gallery-slide">
+            <!-- Image container for each prototype picture -->
             <div class="image-container">
                 <img src="Assets/images/mcmaster_workshop/IMG_6138.jpg" height="600px" id="photo1">
                 <div class="image-caption">Project Title: ALAN - The helping hand</div>
@@ -29,29 +30,32 @@
                 <div class="image-caption">Project Title: </div>
             </div>
             <div class="image-container">
-                <img src="Assets/images/mcmaster_workshop/IMG_6143.jpg" height="600px" id="photo2">
+                <img src="Assets/images/mcmaster_workshop/IMG_6143.jpg" height="600px" id="photo3">
                 <div class="image-caption">Project Title: </div>
             </div>
             <div class="image-container">
-                <img src="Assets/images/mcmaster_workshop/IMG_6144.jpg" height="600px" id="photo2">
+                <img src="Assets/images/mcmaster_workshop/IMG_6144.jpg" height="600px" id="photo4">
                 <div class="image-caption">Project Title: </div>
             </div>
         </div>
+        <!-- Navigation buttons for the image gallery -->
         <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
         <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </div>
-    <br>
-    <br>
+    <br><br>
+    <!-- Button to browse all projects -->
     <button id="browseProjectsBtn">Browse all Projects</button>
 
     <script>
         // Image gallery script
         let currentSlideIndex = 0;
 
+        // Function to change the current slide
         function changeSlide(n) {
             showSlide(currentSlideIndex += n);
         }
 
+        // Function to show the current slide
         function showSlide(n) {
             const slides = document.querySelectorAll('.image-container');
             if (n >= slides.length) { currentSlideIndex = 0; }
@@ -61,9 +65,9 @@
             });
         }
 
-        // Call showSlide to initialize the gallery
+        // Initialize the gallery by showing the first slide
         document.addEventListener('DOMContentLoaded', () => {
-            showSlide(currentSlideIndex); // Show the initial slide
+            showSlide(currentSlideIndex);
         });
 
         // Event listener for the "Browse all Projects" button
@@ -71,6 +75,7 @@
             window.location.href = 'summaryNav.html';
         });
     </script>
+    <!-- Link to the bundled JavaScript file -->
     <script src="bundle.js"></script>
 </body>
 </html>

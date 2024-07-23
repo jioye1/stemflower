@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEM Flower by Up4TheChallenge</title>
+    <!-- Link to the external stylesheet for styling the page -->
     <link rel="stylesheet" href="Assets/page2.5.css">
 </head>
 <body>
     
+    <!-- Text area for user input -->
     <textarea class="centered-textbox" placeholder="Enter text here..."></textarea>
 
+    <!-- Link to the next page with a button -->
     <a href="page3.html">
         <button class="next-button">Next→</button>
     </a>
 
+    <!-- Link to the previous page with a button -->
     <a href="page2.html" class="back-button">
         <button>←Back</button>
     </a>
 
+    <!-- Audio element for the hover sound effect -->
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+
     <script>
-    
+        // Event listener to play/pause the audio on button hover
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('button');
             const audio = document.getElementById('hoverSound');
@@ -37,7 +43,7 @@
             });
         }); 
         
-        // save the text
+        // Save the text from the textarea to local storage when the next button is clicked
         document.addEventListener('DOMContentLoaded', function() {
             const button = document.querySelector('.next-button');
             const textarea = document.querySelector('.centered-textbox');
@@ -49,6 +55,7 @@
 
     </script>
 
+    <!-- Link to the bundled JavaScript file -->
     <script src="bundle.js"></script>
 </body>
 </html>

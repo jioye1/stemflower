@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEM Flower by Up4TheChallenge</title>
+    <!-- Link to the external stylesheet for styling the page -->
     <link rel="stylesheet" href="Assets/sharingPage.css">
 </head>
 <body>
+    <!-- Button to upload the flower to the garden -->
     <button id="uploadButton">Upload Your Flower to The Garden</button>
+    <!-- Hidden link to the next page, displayed after upload -->
     <a href="garden.html" style="display: none;" id="nextButton">
         <button>Next→</button>
     </a>
 
+    <!-- Audio element for the hover sound effect -->
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+
     <script>
-        
-            
+        // Event listener to play/pause the audio on button hover
         document.addEventListener('DOMContentLoaded', function() {
             const button = document.querySelector('button');
             const audio = document.getElementById('hoverSound');
@@ -30,8 +34,7 @@
             });
         });
 
-
-
+        // Show the Next button after clicking the Upload button
         document.addEventListener('DOMContentLoaded', function() {
             const shareButton = document.getElementById('uploadButton');
             const nextButton = document.getElementById('nextButton');
@@ -41,8 +44,7 @@
             });
         });
 
-
-
+        // Log stored text from previous pages and STEM values to the console
         document.addEventListener('DOMContentLoaded', function() {
             const textFromPage2 = localStorage.getItem('textPage2');
             const textFromPage2_5 = localStorage.getItem('textPage2.5');
@@ -54,12 +56,13 @@
             const textFromPage8 = localStorage.getItem('textPage8');
             const textFromPage9 = localStorage.getItem('textPage9');
             const textFromPage10 = localStorage.getItem('textPage10');
-            const textFromPageAuthor = localStorage.getItem('textPageAuthor')
+            const textFromPageAuthor = localStorage.getItem('textPageAuthor');
             const stem1 = localStorage.getItem('textArea1');
             const stem2 = localStorage.getItem('textArea2');
             const stem3 = localStorage.getItem('textArea3');
             const stem4 = localStorage.getItem('textArea4');
             const stem5 = localStorage.getItem('textArea5');
+            
             console.log('Text from Page 2:', textFromPage2);
             console.log('Text from Page 2.5:', textFromPage2_5);
             console.log('Text from Page 3:', textFromPage3);
@@ -75,10 +78,11 @@
             console.log('STEM3:', stem3);
             console.log('STEM4:', stem4);
             console.log('STEM5:', stem5);
-            console.log('Author:', textFromPageAuthor)
+            console.log('Author:', textFromPageAuthor);
         });
-
     </script>
+    
+    <!-- Link to the bundled JavaScript file -->
     <script src="bundle.js"></script>
 </body>
 </html>

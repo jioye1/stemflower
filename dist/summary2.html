@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STEM Flower by Up4TheChallenge</title>
+    <!-- Link to the external stylesheet for styling the page -->
     <link rel="stylesheet" href="Assets/summary.css">
 </head>
 <body>
+    <!-- Header for the projects section -->
     <h1>Projects by Past Secondary</h1>
+    <!-- Container for project details -->
     <div id="projectDetailsContainer"></div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br><br><br>
 
+    <!-- Header for the prototype pictures section -->
     <h1>Prototype Pictures</h1>
+    <!-- Container for the image gallery -->
     <div class="gallery-container">
         <div class="gallery-slide">
+            <!-- Image container for each prototype picture -->
             <div class="image-container">
                 <img src="Assets/images/selfDrivingCars.png" height="600px" id="photo1">
                 <div class="image-caption">Project Title: Self Driving Cars</div>
@@ -29,13 +30,14 @@
                 <div class="image-caption">Project Title: Automatic Watering Device</div>
             </div>
         </div>
+        <!-- Navigation buttons for the image gallery -->
         <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
         <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </div>
 
-    <br>
-    <br>
+    <br><br>
 
+    <!-- Button to browse all projects -->
     <button id="browseProjectsBtn">Browse all Projects</button>
 
     <script>
