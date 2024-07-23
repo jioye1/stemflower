@@ -14,7 +14,7 @@
 
 body {
     font-family: Montserrat-Light, sans-serif;
-    animation: fadeIn 1s ease-out; 
+    animation: fadeIn 1s ease-out;
     background-image: url(images/flower3.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -27,34 +27,33 @@ html, body {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center; /* Vertical centering */
-    justify-content: center; /* Horizontal centering */
-    font-family: 'Shantell Sans', Arial, sans-serif; /* Uniform font styling */
-    box-sizing: border-box; /* Includes padding and border in the element's dimensions */
+    align-items: center;
+    justify-content: center;
+    font-family: 'Shantell Sans', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-/* Apply box-sizing to all elements */
 *, *::before, *::after {
     box-sizing: inherit;
 }
 
 .container {
-    position: relative; /* Set relative positioning to enable absolute positioning of children */
+    position: relative;
 }
 
 .centered-textbox {
     font-family: Montserrat-Light, sans-serif;
-    width: 90%; /* Aiming for full utilization of the viewport width */
-    min-width: 550px; /* Ensures it doesn't get too small on narrow screens */
-    max-width: 800px; /* Prevents it from becoming excessively wide */
-    height: 130px; /* Fixed height for consistency */
-    padding: 10px; /* Padding inside the textbox */
-    font-size: 16px; /* Font size for readability */
-    border: 2px solid #262626; /* Custom green border */
-    border-radius: 5px; /* Rounded corners */
-    resize: none; /* Disables resizing */
-    font-family: 'Shantell Sans', Arial, sans-serif; /* Font family with fallback */
-    margin-top: -200px; /* Adjust this value to move the textbox up or down */
+    width: 90%;
+    min-width: 550px;
+    max-width: 800px;
+    height: 130px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #262626;
+    border-radius: 5px;
+    resize: none;
+    font-family: 'Shantell Sans', Arial, sans-serif;
+    margin-top: -200px;
 }
 
 button {
@@ -64,22 +63,22 @@ button {
     font-size: 30px;
     font-weight: 600;
     cursor: pointer;
-    background-color: #ffffff; /* Light beige background */
-    border: 2px solid #262626; /* Custom border */
-    color: #262626; /* Text color */
-    border-radius: 8px; /* Rounded corners */
-    transition: transform 0.3s ease, font-size 0.3s ease; 
+    background-color: #ffffff;
+    border: 2px solid #262626;
+    color: #262626;
+    border-radius: 8px;
+    transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
 button:hover {
-    transform: scale(1.1); /* Enlarges the button by 10% */
-    font-size: 35px; /* Increases font size */
+    transform: scale(1.1);
+    font-size: 35px;
 }
 
 .next-button {
-    position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
-    bottom: 20px; /* 20px from the bottom */
-    right: 20px; /* 20px from the right */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
 .back-button {
@@ -89,10 +88,10 @@ button:hover {
 }
 
 #watering {
-    display: none; /* Hide the image initially */
-    position: absolute; /* Absolute positioning relative to the .container */
-    top: 140px; /* Adjust to position below the textbox */
-    left: -20px; /* Adjust to move slightly left */
+    display: none;
+    position: absolute;
+    top: 140px;
+    left: -20px;
 }
 
 @keyframes fadeOut {

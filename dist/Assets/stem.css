@@ -13,11 +13,11 @@ html, body {
     justify-content: center;
     font-family: 'Montserrat-Light', Arial, sans-serif;
     position: relative;
-    overflow-x: hidden; /* Hide horizontal scroll */
+    overflow-x: hidden;
 }
 
 body {
-    animation: fadeIn 1s ease-out; 
+    animation: fadeIn 1s ease-out;
     background-image: url(images/stem.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -31,19 +31,19 @@ body {
 }
 
 .container {
-    position: fixed; /* Use fixed to ensure it's always at the bottom */
+    position: fixed;
     bottom: 10px;
     left: 0;
     right: 0;
-    padding: 5 5px; /* Add some padding on the sides */
+    padding: 5 5px;
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
 .root-textarea {
-    flex-grow: 1; /* Allows each textarea to grow and fill the space */
-    margin: 0 5px; /* Space between each textarea */
+    flex-grow: 1;
+    margin: 0 5px;
     height: 100px;
     background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid #ccc;
@@ -53,15 +53,15 @@ body {
 }
 
 .button-container {
-    position: fixed; /* Use fixed to place it relative to the viewport */
-    right: 50px; /* Adjust the distance from the right */
-    top: 45%; /* Adjust according to the flower's position */
+    position: fixed;
+    right: 50px;
+    top: 45%;
 }
 
 .button-container-left {
-    position: fixed; /* Use fixed to place it relative to the viewport */
-    left: 50px; /* Adjust the distance from the left */
-    top: 45%; /* Adjust according to the flower's position */
+    position: fixed;
+    left: 50px;
+    top: 45%;
 }
 
 button {

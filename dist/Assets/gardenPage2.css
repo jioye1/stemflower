@@ -46,14 +46,14 @@ button:hover {
 }
 
 #gardenContainer {
-    margin-top: 250px; /* Adjust the value as needed */
-    padding-top: 20px; /* Adjust the value as needed */
+    margin-top: 250px;
+    padding-top: 20px;
 }
 
 .project-container {
     position: relative;
     display: inline-block;
-    margin: 20px 10px; /* Add some margin to the top */
+    margin: 20px 10px;
 }
 
 .project-info {
@@ -75,16 +75,16 @@ button:hover {
 #nextGardenButton {
     font-family: Montserrat-Light, sans-serif;
     font-family: 'Shantell Sans';
-    position: absolute; /* Absolute positioning relative to the nearest positioned ancestor */
-    bottom: 20px; /* 20px from the bottom */
-    right: 20px; /* 20px from the right */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
     padding: 10px 20px;
     font-size: 30px;
     font-weight: 600;
     cursor: pointer;
-    background-color: #ffffff; /* Light beige background */
-    border: 2px solid #262626; /* Golden border */
-    color: #262626; /* Green text */
-    border-radius: 8px; /* Rounded corners */
+    background-color: #ffffff;
+    border: 2px solid #262626;
+    color: #262626;
+    border-radius: 8px;
     transition: transform 0.3s ease, font-size 0.3s ease; 
 }

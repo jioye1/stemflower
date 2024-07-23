@@ -14,8 +14,8 @@
 
 body {
     font-family: Montserrat-Light, sans-serif;
-    animation: fadeIn 1s ease-out; 
-    background-image: url(images/petals.png); /* Updated to use the correct image for the page background */
+    animation: fadeIn 1s ease-out;
+    background-image: url(images/petals.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -27,18 +27,16 @@ html, body {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center; /* Vertical centering */
-    justify-content: center; /* Horizontal centering */
-    font-family: 'Shantell Sans', Arial, sans-serif; /* Uniform font styling */
-    box-sizing: border-box; /* Includes padding and border in the element's dimensions */
+    align-items: center;
+    justify-content: center;
+    font-family: 'Shantell Sans', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-/* Apply box-sizing to all elements */
 *, *::before, *::after {
     box-sizing: inherit;
 }
 
-/* Container for the image and the textbox */
 .flower-container {
     position: absolute;
     top: 50%;
@@ -46,18 +44,16 @@ html, body {
     transform: translate(-50%, 20%);
 }
 
-/* Styles specific to the flower image */
 img[src="Assets/images/flowerPetals.png"] {
-    width: 350px; /* Adjusted width */
-    height: auto; /* Maintain aspect ratio */
-    transition: transform 0.3s ease; /* Smooth scaling on hover */
+    width: 350px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
-/* Styles for the textbox */
 .textbox {
-    visibility: hidden; /* Hide by default */
+    visibility: hidden;
     position: absolute;
-    top: -85%; /* Position above the image */
+    top: -85%;
     left: 50%;
     transform: translateX(-50%);
     padding: 10px;
@@ -68,12 +64,10 @@ img[src="Assets/images/flowerPetals.png"] {
     transition: visibility 0.3s ease;
 }
 
-/* Hover effect on container to show textbox */
 .flower-container:hover .textbox {
     visibility: visible;
 }
 
-/* Enlarge image on hover */
 .flower-container:hover img {
     transform: scale(1.1);
 }
@@ -85,26 +79,26 @@ button {
     font-size: 30px;
     font-weight: 600;
     cursor: pointer;
-    background-color: #ffffff; /* Light beige background */
-    border: 2px solid #262626; /* Custom border */
-    color: #262626; /* Text color */
-    border-radius: 8px; /* Rounded corners */
-    transition: transform 0.3s ease, font-size 0.3s ease; 
+    background-color: #ffffff;
+    border: 2px solid #262626;
+    color: #262626;
+    border-radius: 8px;
+    transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
 button:hover {
-    transform: scale(1.1); /* Enlarges the button by 10% */
-    font-size: 35px; /* Increases font size */
+    transform: scale(1.1);
+    font-size: 35px;
 }
 
 .next-button {
-    position: fixed; /* Fixed positioning relative to the viewport */
-    bottom: 20px; /* 20px from the bottom */
-    right: 20px; /* 20px from the right */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
 
 .back-button {
-    position: fixed; /* Fixed positioning relative to the viewport */
+    position: fixed;
     bottom: 20px;
     left: 20px;
 }

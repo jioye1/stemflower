@@ -33,7 +33,7 @@ header {
     text-align: center;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative; /* Add this to position the logo */
+    position: relative;
 }
 
 header h1 {
@@ -97,7 +97,7 @@ a:hover {
     cursor: pointer;
     margin-top: 30px;
     transition: background-color 0.3s, transform 0.3s;
-    outline: none; /* Remove outline to avoid additional border */
+    outline: none;
 }
 
 #startPageButton:hover {
