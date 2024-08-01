@@ -73,8 +73,8 @@ function displayData(flowers) {
 
     // Define the mapping of Document ID to background image URLs
     const backgroundImageUrls = {
-        "AXWYa9vtVPWQeOGgry1J": "assets/images/mcmaster_workshop/IMG_6144.jpg",
-        "Pwokj9phAW4W7Np0WnMT": "assets/images/mcmaster_workshop/IMG_6138.jpg",
+        "AXWYa9vtVPWQeOGgry1J": "Assets/images/mcmaster_workshop/IMG_6144.jpg",
+        "Pwokj9phAW4W7Np0WnMT": "Assets/images/mcmaster_workshop/IMG_6138.jpg",
         // Add more mappings as needed
     };
 
@@ -110,7 +110,7 @@ function displayData(flowers) {
                 </ul>
             `;
 
-            const backImageUrl = backgroundImageUrls[projectId] || 'assets/images/default_back.png'; // Provide a default image if not specified
+            const backImageUrl = backgroundImageUrls[projectId] || 'Assets/images/default_back.png'; // Provide a default image if not specified
 
             console.log('Back Image URL:', backImageUrl);
 
@@ -147,7 +147,7 @@ function displayData(flowers) {
 
             // Create the image element
             const img = document.createElement('img');
-            img.src = 'assets/images/stemFlower.png'; // Replace with the actual image path or URL
+            img.src = 'Assets/images/stemFlower.png'; // Replace with the actual image path or URL
             img.width = 150;
             img.alt = item.projectTitle;
 
