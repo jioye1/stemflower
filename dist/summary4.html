@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Flower by Up4TheChallenge</title>
+    <link rel="stylesheet" href="Assets/cardSummary.css">
+</head>
+<body>
+    <!-- Header for the projects section -->
+    <h1>Projects by LIT at McMaster University</h1>
+    
+    <div class="cards-wrapper" id="cards-wrapper">
+        <!-- Cards will be generated here -->
+    </div>
+
+    <script>
+        const projects = [
+            {
+                "Document ID": "rUpDyXFflY7nc4faHldT",
+                "STEM1": "s1",
+                "STEM2": "s2",
+                "STEM3": "s3",
+                "STEM4": "s4",
+                "STEM5": "s5",
+                "SocialOutcome1": "Population growth (Less death's due to natural diaster's).",
+                "SocialOutcome2": "Advancement with technology and weather control (Being able to challenge and control natural diasters by offering solutions on way's to prevent it)",
+                "SocialOutcome3": "Step in the right direction specifically Global warming (One of the biggest challenges us humans face). Being able to control natural diasters would put us on the right track to conquering global warming.",
+                "SocialOutcome4": "Global Unity: Natural diasters happen everywhere on earth. Being able to come together and promote a solution would increase the connections different countries have with each other.",
+                "SocialOutcome5": "Empathy and increase in human acknowledgement: By demonstrating that there is a problem at hand and working towards a solution it brings out the desired human nature that would promote goodwill for the world.",
+                "SocialOutcome6": "so6",
+                "SocialOutcome7": "so7",
+                "beneficiary": "user",
+                "createdBy": "author",
+                "projectTitle": "name",
+                "solveWhatProblem": "provide a way",
+                "backImageUrl": "Assets/images/mcmaster_workshop/IMG_6143.jpg"
+            },
+            {
+                "Document ID": "sBEgY5WEACl1RBQjpVSq",
+                "STEM1": "design",
+                "STEM2": "numbers",
+                "STEM3": "science",
+                "STEM4": "",
+                "STEM5": "",
+                "SocialOutcome1": "Reduces negative effects of climate change",
+                "SocialOutcome2": "Promotes a clean city for residents",
+                "SocialOutcome3": "Cleaner air",
+                "SocialOutcome4": "Happy people",
+                "SocialOutcome5": "",
+                "SocialOutcome6": "",
+                "SocialOutcome7": "",
+                "beneficiary": "20-30 YEAR OLD WORKING PROFESSIONALS",
+                "createdBy": "SQUAD 8",
+                "projectTitle": "TEST TUESDAY",
+                "solveWhatProblem": "REDUCE CONSUMPTION OF PLASTIC",
+                "backImageUrl": "Assets/images/mcmaster_workshop/IMG_6144.jpg"
+            }
+        ];
+
+        function truncateText(text, maxLength) {
+            if (text.length > maxLength) {
+                return text.substring(0, maxLength) + "...";
+            } else {
+                return text;
+            }
+        }
+
+        const cardsWrapper = document.getElementById('cards-wrapper');
+
+        projects.forEach((project, index) => {
+            const cardContainer = document.createElement('div');
+            cardContainer.className = 'card-container';
+
+            const socialOutcomes = `
+                <ul>
+                    <li>1. ${truncateText(project.SocialOutcome1, 80)}</li>
+                    <li>2. ${truncateText(project.SocialOutcome2, 80)}</li>
+                    <li>3. ${truncateText(project.SocialOutcome3, 80)}</li>
+                    <li>4. ${truncateText(project.SocialOutcome4, 80)}</li>
+                    <li>5. ${truncateText(project.SocialOutcome5, 80)}</li>
+                    <li>6. ${truncateText(project.SocialOutcome6, 80)}</li>
+                    <li>7. ${truncateText(project.SocialOutcome7, 80)}</li>
+                </ul>
+            `;
+
+            const stemContent = `
+                <ul>
+                    <li>1. ${truncateText(project.STEM1, 80)}</li>
+                    <li>2. ${truncateText(project.STEM2, 80)}</li>
+                    <li>3. ${truncateText(project.STEM3, 80)}</li>
+                    <li>4. ${truncateText(project.STEM4, 80)}</li>
+                    <li>5. ${truncateText(project.STEM5, 80)}</li>
+                </ul>
+            `;
+
+            cardContainer.innerHTML = `
+                <div class="card">
+                    <div class="side front">
+                        <div class="project-title">${project.projectTitle}</div>
+                        <div class="created-by">${project.createdBy}</div>
+                        <div class="card-content">
+                            <div class="social-outcomes">
+                                ${socialOutcomes}
+                            </div>
+                            <div class="stem">
+                                ${stemContent}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="side back" style="background-image: url('${project.backImageUrl}');">
+                        <div class="project-summary">${project.projectTitle} provided a way for ${project.beneficiary} to ${project.solveWhatProblem}.</div>
+                    </div>
+                </div>
+            `;
+
+            cardsWrapper.appendChild(cardContainer);
+        });
+    </script>
+</body>
+</html>

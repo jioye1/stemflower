@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Flower by Up4TheChallenge</title>
+    <link rel="stylesheet" href="Assets/cardSummary.css">
+    <script type="module">
+        import { fetchData } from '/src/index.js';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const projects = await fetchData();
+            console.log('Projects fetched:', projects);
+
+            function truncateText(text, maxLength) {
+                if (text.length > maxLength) {
+                    return text.substring(0, maxLength) + "...";
+                } else {
+                    return text;
+                }
+            }
+
+            const cardsWrapper = document.getElementById('cards-wrapper');
+
+            // Define the mapping of Document ID to background image URLs
+            const backgroundImageUrls = {
+                "AXWYa9vtVPWQeOGgry1J": "Assets/images/mcmaster_workshop/IMG_6144.jpg",
+                "Pwokj9phAW4W7Np0WnMT": "Assets/images/mcmaster_workshop/IMG_6138.jpg",
+                // Add more mappings as needed
+            };
+
+            projects.forEach((project) => {
+                console.log('Project object:', project);
+                const projectId = project.id; // Use project.id
+                console.log('Project ID:', projectId);
+
+                const cardContainer = document.createElement('div');
+                cardContainer.className = 'card-container';
+
+                const socialOutcomes = `
+                    <ul>
+                        <li>1. ${truncateText(project.SocialOutcome1, 80)}</li>
+                        <li>2. ${truncateText(project.SocialOutcome2, 80)}</li>
+                        <li>3. ${truncateText(project.SocialOutcome3, 80)}</li>
+                        <li>4. ${truncateText(project.SocialOutcome4, 80)}</li>
+                        <li>5. ${truncateText(project.SocialOutcome5, 80)}</li>
+                        <li>6. ${truncateText(project.SocialOutcome6, 80)}</li>
+                        <li>7. ${truncateText(project.SocialOutcome7, 80)}</li>
+                    </ul>
+                `;
+
+                const stemContent = `
+                    <ul>
+                        <li>1. ${truncateText(project.STEM1, 80)}</li>
+                        <li>2. ${truncateText(project.STEM2, 80)}</li>
+                        <li>3. ${truncateText(project.STEM3, 80)}</li>
+                        <li>4. ${truncateText(project.STEM4, 80)}</li>
+                        <li>5. ${truncateText(project.STEM5, 80)}</li>
+                    </ul>
+                `;
+
+                const backImageUrl = backgroundImageUrls[projectId] || 'Assets/images/default_back.png'; // Provide a default image if not specified
+
+                console.log('Back Image URL:', backImageUrl);
+
+                cardContainer.innerHTML = `
+                    <div class="card">
+                        <div class="side front">
+                            <div class="project-title">${project.projectTitle}</div>
+                            <div class="created-by">${project.createdBy}</div>
+                            <div class="card-content">
+                                <div class="social-outcomes">
+                                    ${socialOutcomes}
+                                </div>
+                                <div class="stem">
+                                    ${stemContent}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="side back" style="background-image: url('${backImageUrl}');">
+                            <div class="project-summary">${project.projectTitle} provided a way for ${project.beneficiary} to ${project.solveWhatProblem}.</div>
+                        </div>
+                    </div>
+                `;
+
+                cardsWrapper.appendChild(cardContainer);
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Header for the projects section -->
+    <h1>Projects by LIT at McMaster University</h1>
+    
+    <div class="cards-wrapper" id="cards-wrapper">
+        <!-- Cards will be generated here -->
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+
+    <!-- Button to browse all projects -->
+    <button id="browseProjectsBtn">Browse all Projects</button>
+
+
+    <script>
+        // Event listener for the "Browse all Projects" button
+        document.getElementById('browseProjectsBtn').addEventListener('click', () => {
+            window.location.href = 'summaryNav.html';
+        });
+    </script>
+</body>
+</html>
