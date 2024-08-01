@@ -1,11 +1,24 @@
 const path = require('path');
 
 module.exports = {
-    // Other webpack config settings
+    entry: './src/index.js', // Your entry point
     output: {
-        path: path.resolve(__dirname, 'public'), // Change this line to 'public'
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
-    // Other settings
-    mode:'production'
+    mode: 'production',
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader', // Use Babel to transpile your code if needed
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    }
 };
