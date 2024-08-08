@@ -10,11 +10,11 @@
 <body>
     
     <!-- Centered textarea for user input -->
-    <textarea class="centered-textbox" placeholder="Enter name here..."></textarea>
+    <textarea class="centered-textbox" id="authorName" placeholder="Enter name here..."></textarea>
 
     <!-- Link to the next page with a button -->
-    <a href="sharing.html">
-        <button>Next→</button>
+    <a href="sharing.html" id="nextPageLink">
+        <button class="next-button">Next→</button>
     </a>
 
     <!-- Link to the previous page with a button -->
@@ -51,13 +51,11 @@
             });
 
             // Save the text from the textarea to local storage when the button is clicked
-            document.addEventListener('DOMContentLoaded', function() {
-                const button = document.querySelector('button');
-                const textarea = document.querySelector('.centered-textbox');
+            const nextButton = document.querySelector('.next-button');
+            const textarea = document.getElementById('authorName');
 
-                button.addEventListener('click', function() {
-                    localStorage.setItem('textPageAuthor', textarea.value); // Store textarea content in local storage
-                });
+            nextButton.addEventListener('click', function() {
+                localStorage.setItem('textPageAuthor', textarea.value); // Store textarea content in local storage
             });
 
             // Custom audio controls

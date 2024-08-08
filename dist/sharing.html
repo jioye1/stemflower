@@ -68,7 +68,7 @@
 
             // Load and display project data
             const projectTitle = localStorage.getItem('textPage2');
-            const createdBy = localStorage.getItem('textPageAuthor');
+            const createdBy = localStorage.getItem('textPageAuthor') || 'Unknown Author';
             const socialOutcomes = [
                 localStorage.getItem('textPage4'),
                 localStorage.getItem('textPage5'),
@@ -86,11 +86,11 @@
                 localStorage.getItem('textArea5')
             ];
             const solveWhatProblem = localStorage.getItem('textPage3');
-            const backImageUrl = 'Assets/images/mcmaster_workshop/IMG_6144.jpg'; // Change if you have a dynamic URL
+            const backImageUrl = 'Assets/images/default_back.png'; // Change if you have a dynamic URL
 
             // Populate the card
             document.getElementById('projectTitle').innerText = projectTitle;
-            document.getElementById('createdBy').innerText = createdBy;
+            document.getElementById('createdBy').innerText = `${createdBy}`;
             const socialOutcomesList = document.getElementById('socialOutcomes');
             socialOutcomes.forEach((outcome, index) => {
                 if (outcome) {
