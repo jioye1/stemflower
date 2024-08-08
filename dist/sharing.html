@@ -42,6 +42,15 @@
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
 
     <script>
+        // Truncate text function
+        function truncateText(text, maxLength) {
+            if (text.length > maxLength) {
+                return text.substring(0, maxLength) + "...";
+            } else {
+                return text;
+            }
+        }
+
         // Event listener to play/pause the audio on button hover
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('button');
@@ -89,13 +98,13 @@
             const backImageUrl = 'Assets/images/default_back.png'; // Change if you have a dynamic URL
 
             // Populate the card
-            document.getElementById('projectTitle').innerText = projectTitle;
-            document.getElementById('createdBy').innerText = `${createdBy}`;
+            document.getElementById('projectTitle').innerText = truncateText(projectTitle, 80);
+            document.getElementById('createdBy').innerText = `${truncateText(createdBy, 80)}`;
             const socialOutcomesList = document.getElementById('socialOutcomes');
             socialOutcomes.forEach((outcome, index) => {
                 if (outcome) {
                     const li = document.createElement('li');
-                    li.innerText = `${index + 1}. ${outcome}`;
+                    li.innerText = `${index + 1}. ${truncateText(outcome, 80)}`;
                     socialOutcomesList.appendChild(li);
                 }
             });
@@ -103,11 +112,11 @@
             stemContent.forEach((stem, index) => {
                 if (stem) {
                     const li = document.createElement('li');
-                    li.innerText = `${index + 1}. ${stem}`;
+                    li.innerText = `${index + 1}. ${truncateText(stem, 80)}`;
                     stemList.appendChild(li);
                 }
             });
-            document.getElementById('projectSummary').innerText = `${projectTitle} provided a way for ${localStorage.getItem('textPage2.5')} to ${solveWhatProblem}.`;
+            document.getElementById('projectSummary').innerText = `${truncateText(projectTitle, 80)} provided a way for ${truncateText(localStorage.getItem('textPage2.5'), 80)} to ${truncateText(solveWhatProblem, 80)}.`;
             document.getElementById('backImage').style.backgroundImage = `url('${backImageUrl}')`;
         });
 
