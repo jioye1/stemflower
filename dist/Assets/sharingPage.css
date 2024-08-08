@@ -185,3 +185,23 @@ button {
 button:hover {
     transform: scale(1.1); /* Only enlarge on hover */
 }
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Changed to fixed positioning */
+    bottom: 751px; /* Adjust this property to move the button up or down */
+    right: 90px; /* Adjust this property to move the button left or right */
+}
+
+.replay-button {
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    transition: transform 0.3s ease;
+}
+
+.replay-button:hover {
+    transform: scale(1.1);
+}
