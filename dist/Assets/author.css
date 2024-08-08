@@ -83,3 +83,21 @@ a.back-button button {
     right: auto;
     left: 20px;
 }
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.replay-button {
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    transition: transform 0.3s ease;
+}
+
+.replay-button:hover {
+    transform: scale(1.1);
+}

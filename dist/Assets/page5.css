@@ -106,3 +106,25 @@ button:hover {
 .fade-out {
     animation: fadeOut 1s ease-out forwards;
 }
+
+/* Custom styles for the audio controls */
+.audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    position: absolute;
+    top: 410px; /* Adjusted position */
+    right: 300px;
+}
+
+.replay-button {
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    transition: transform 0.3s ease;
+}
+
+.replay-button:hover {
+    transform: scale(1.1);
+}

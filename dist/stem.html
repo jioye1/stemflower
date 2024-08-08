@@ -33,42 +33,53 @@
 
     <!-- Audio element for the hover sound effect -->
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+    
+    <!-- Audio element for the background music (autoplay) -->
+    <audio id="backgroundMusic" src="Assets/audio/page_audios/stem_audio.mp3" autoplay></audio>
 
-    <!-- Link to the bundled JavaScript file -->
-    <script src="bundle.js"></script>
+    <!-- Custom audio controls with PNG -->
+    <div class="audio-controls">
+        <img id="replayBtn" src="Assets/images/replay_btn_black.png" alt="Replay Button" class="replay-button"/>
+    </div>
+
     <script>
         // Event listener to play/pause the audio on button hover
         document.addEventListener('DOMContentLoaded', function() {
-            const button = document.getElementById('saveButton');
+            const buttons = document.querySelectorAll('button');
             const audio = document.getElementById('hoverSound');
             const textareas = document.querySelectorAll('.root-textarea');
 
-            button.addEventListener('mouseover', function() {
-                audio.play();
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    audio.play();
+                });
+
+                button.addEventListener('mouseout', function() {
+                    audio.pause();
+                    audio.currentTime = 0;
+                });
             });
 
-            button.addEventListener('mouseout', function() {
-                audio.pause();
-                audio.currentTime = 0;
-            });
-
-            button.addEventListener('click', function() {
-                // Save each textarea's content in localStorage with a unique key
+            // Save each textarea's content in localStorage with a unique key
+            const saveButton = document.getElementById('saveButton');
+            saveButton.addEventListener('click', function() {
                 textareas.forEach((textarea, index) => {
                     localStorage.setItem('textArea' + (index + 1), textarea.value);
                 });
             });
 
-            const backButton = document.getElementById('backButton');
-            backButton.addEventListener('mouseover', function() {
-                audio.play();
-            });
+            // Custom audio controls
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            const replayBtn = document.getElementById('replayBtn');
 
-            backButton.addEventListener('mouseout', function() {
-                audio.pause();
-                audio.currentTime = 0;
+            replayBtn.addEventListener('click', function() {
+                backgroundMusic.currentTime = 0;
+                backgroundMusic.play();
             });
         });
     </script>
+
+    <!-- Link to the bundled JavaScript file -->
+    <script src="bundle.js"></script>
 </body>
 </html>

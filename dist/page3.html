@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Text area for user input with a dynamic placeholder -->
-    <textarea class="centered-textbox" id="dynamic-placeholder" placeholder="[Name of Prototype] provided a way for [Name of Users] to helo solve the issue of [Needs/Insights]."></textarea>
+    <textarea class="centered-textbox" id="dynamic-placeholder" placeholder="[Name of Prototype] provided a way for [Name of Users] to help solve the issue of [Needs/Insights]."></textarea>
 
     <!-- Link to the next page with a button -->
     <a href="page4.html">
@@ -24,21 +24,38 @@
     <!-- Audio element for the hover sound effect -->
     <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
 
+    <!-- Audio element for the background music (autoplay) -->
+    <audio id="backgroundMusic" src="Assets/audio/page_audios/page3_audio.mp3" autoplay></audio>
+
+    <!-- Custom audio controls with PNG -->
+    <div class="audio-controls">
+        <img id="replayBtn" src="Assets/images/replay_btn.png" alt="Replay Button" class="replay-button"/>
+    </div>
+
     <script>
         // Event listener to play/pause the audio on button hover
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('button');
-            const audio = document.getElementById('hoverSound');
+            const hoverAudio = document.getElementById('hoverSound');
 
             buttons.forEach(button => {
                 button.addEventListener('mouseover', function() {
-                    audio.play();
+                    hoverAudio.play();
                 });
 
                 button.addEventListener('mouseout', function() {
-                    audio.pause();
-                    audio.currentTime = 0;
+                    hoverAudio.pause();
+                    hoverAudio.currentTime = 0;
                 });
+            });
+
+            // Custom audio controls
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            const replayBtn = document.getElementById('replayBtn');
+
+            replayBtn.addEventListener('click', function() {
+                backgroundMusic.currentTime = 0;
+                backgroundMusic.play();
             });
 
             // Update the placeholder text dynamically from localStorage
@@ -46,7 +63,7 @@
             const beneficiaries = localStorage.getItem('textPage2.5'); // Get the beneficiaries
             const textarea = document.querySelector('.centered-textbox');
             if (prototypeName && beneficiaries) {
-                textarea.placeholder = `${prototypeName} provided a way for ${beneficiaries} to [Needs/Insights].`;
+                textarea.placeholder = `${prototypeName} provided a way for ${beneficiaries} to help solve the issue of [Needs/Insights].`;
             }
 
             // Save the text from the textarea to local storage when the next button is clicked

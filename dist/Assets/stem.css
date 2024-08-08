@@ -78,3 +78,23 @@ button {
 button:hover {
     transform: scale(1.1);
 }
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Changed to fixed positioning */
+    bottom: 730px; /* Adjust this property to move the button up or down */
+    left: 1020px; /* Adjust this property to move the button left or right */
+}
+
+.replay-button {
+    cursor: pointer;
+    width: 65px;
+    height: 65px;
+    transition: transform 0.3s ease;
+}
+
+.replay-button:hover {
+    transform: scale(1.1);
+}
