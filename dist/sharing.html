@@ -8,8 +8,31 @@
     <link rel="stylesheet" href="Assets/sharingPage.css">
 </head>
 <body>
+    <!-- Centered card profile -->
+    <div class="card-container">
+        <div class="card">
+            <div class="side front">
+                <div class="project-title" id="projectTitle"></div>
+                <div class="created-by" id="createdBy"></div>
+                <div class="card-content">
+                    <div class="social-outcomes">
+                        <ul id="socialOutcomes"></ul>
+                    </div>
+                    <div class="stem">
+                        <ul id="stemContent"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="side back" id="backImage" style="background-image: url('Assets/images/card_back_default.jpg');">
+                <div class="project-summary" id="projectSummary"></div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Button to upload the flower to the garden -->
-    <button id="uploadButton">Upload Your Flower to The Garden</button>
+    <button id="uploadButton">Upload</button>
+    <!-- Button to rebuild the flower -->
+    <button id="rebuildButton">Rebuild</button>
     <!-- Hidden link to the next page, displayed after upload -->
     <a href="garden.html" style="display: none;" id="nextButton">
         <button>Next→</button>
@@ -21,64 +44,79 @@
     <script>
         // Event listener to play/pause the audio on button hover
         document.addEventListener('DOMContentLoaded', function() {
-            const button = document.querySelector('button');
+            const buttons = document.querySelectorAll('button');
             const audio = document.getElementById('hoverSound');
 
-            button.addEventListener('mouseover', function() {
-                audio.play();
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    audio.play();
+                });
+
+                button.addEventListener('mouseout', function() {
+                    audio.pause();
+                    audio.currentTime = 0;
+                });
             });
 
-            button.addEventListener('mouseout', function() {
-                audio.pause();
-                audio.currentTime = 0;
-            });
-        });
-
-        // Show the Next button after clicking the Upload button
-        document.addEventListener('DOMContentLoaded', function() {
+            // Show the Next button after clicking the Upload button
             const shareButton = document.getElementById('uploadButton');
             const nextButton = document.getElementById('nextButton');
 
             shareButton.addEventListener('click', function() {
                 nextButton.style.display = 'block'; // Show the Next button
             });
+
+            // Load and display project data
+            const projectTitle = localStorage.getItem('textPage2');
+            const createdBy = localStorage.getItem('textPageAuthor');
+            const socialOutcomes = [
+                localStorage.getItem('textPage4'),
+                localStorage.getItem('textPage5'),
+                localStorage.getItem('textPage6'),
+                localStorage.getItem('textPage7'),
+                localStorage.getItem('textPage8'),
+                localStorage.getItem('textPage9'),
+                localStorage.getItem('textPage10')
+            ];
+            const stemContent = [
+                localStorage.getItem('textArea1'),
+                localStorage.getItem('textArea2'),
+                localStorage.getItem('textArea3'),
+                localStorage.getItem('textArea4'),
+                localStorage.getItem('textArea5')
+            ];
+            const solveWhatProblem = localStorage.getItem('textPage3');
+            const backImageUrl = 'Assets/images/mcmaster_workshop/IMG_6144.jpg'; // Change if you have a dynamic URL
+
+            // Populate the card
+            document.getElementById('projectTitle').innerText = projectTitle;
+            document.getElementById('createdBy').innerText = createdBy;
+            const socialOutcomesList = document.getElementById('socialOutcomes');
+            socialOutcomes.forEach((outcome, index) => {
+                if (outcome) {
+                    const li = document.createElement('li');
+                    li.innerText = `${index + 1}. ${outcome}`;
+                    socialOutcomesList.appendChild(li);
+                }
+            });
+            const stemList = document.getElementById('stemContent');
+            stemContent.forEach((stem, index) => {
+                if (stem) {
+                    const li = document.createElement('li');
+                    li.innerText = `${index + 1}. ${stem}`;
+                    stemList.appendChild(li);
+                }
+            });
+            document.getElementById('projectSummary').innerText = `${projectTitle} provided a way for ${localStorage.getItem('textPage2.5')} to ${solveWhatProblem}.`;
+            document.getElementById('backImage').style.backgroundImage = `url('${backImageUrl}')`;
         });
 
-        // Log stored text from previous pages and STEM values to the console
-        document.addEventListener('DOMContentLoaded', function() {
-            const textFromPage2 = localStorage.getItem('textPage2');
-            const textFromPage2_5 = localStorage.getItem('textPage2.5');
-            const textFromPage3 = localStorage.getItem('textPage3');
-            const textFromPage4 = localStorage.getItem('textPage4');
-            const textFromPage5 = localStorage.getItem('textPage5');
-            const textFromPage6 = localStorage.getItem('textPage6');
-            const textFromPage7 = localStorage.getItem('textPage7');
-            const textFromPage8 = localStorage.getItem('textPage8');
-            const textFromPage9 = localStorage.getItem('textPage9');
-            const textFromPage10 = localStorage.getItem('textPage10');
-            const textFromPageAuthor = localStorage.getItem('textPageAuthor');
-            const stem1 = localStorage.getItem('textArea1');
-            const stem2 = localStorage.getItem('textArea2');
-            const stem3 = localStorage.getItem('textArea3');
-            const stem4 = localStorage.getItem('textArea4');
-            const stem5 = localStorage.getItem('textArea5');
-            
-            console.log('Text from Page 2:', textFromPage2);
-            console.log('Text from Page 2.5:', textFromPage2_5);
-            console.log('Text from Page 3:', textFromPage3);
-            console.log('Text from Page 4:', textFromPage4);
-            console.log('Text from Page 5:', textFromPage5);
-            console.log('Text from Page 6:', textFromPage6);
-            console.log('Text from Page 7:', textFromPage7);
-            console.log('Text from Page 8:', textFromPage8);
-            console.log('Text from Page 9:', textFromPage9);
-            console.log('Text from Page 10:', textFromPage10);
-            console.log('STEM1:', stem1);
-            console.log('STEM2:', stem2);
-            console.log('STEM3:', stem3);
-            console.log('STEM4:', stem4);
-            console.log('STEM5:', stem5);
-            console.log('Author:', textFromPageAuthor);
+        // Add confirmation dialog to Rebuild button
+        document.getElementById('rebuildButton').addEventListener('click', function(event) {
+            const confirmRebuild = confirm("Are you sure you want to rebuild? This will discard your current progress.");
+            if (confirmRebuild) {
+                window.location.href = 'page2.html'; // Redirect to page2.html if confirmed
+            }
         });
     </script>
     
