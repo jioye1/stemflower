@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Flower by Up4TheChallenge</title>
+    <!-- Link to the external stylesheet for styling the garden page -->
+    <link rel="stylesheet" href="Assets/gardenPage3.css">
+</head>
+<body>
+    <!-- Container for the garden elements -->
+    <div id="gardenContainer"></div>
+
+    <!-- Link to the next garden page with a button -->
+    <a href="garden.html">
+        <button id="nextGardenButton">Next Garden</button>
+    </a>
+
+    <!-- Audio element for the hover sound effect -->
+    <audio id="hoverSound" src="Assets/audio/pop sound effect.mp3"></audio>
+
+    <script>
+        // Event listener to play/pause the audio on button hover
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.querySelector('button');
+            const audio = document.getElementById('hoverSound');
+
+            button.addEventListener('mouseover', function() {
+                audio.play();
+            });
+
+            button.addEventListener('mouseout', function() {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+
+            // JSON data containing project details
+            const projects = [
+                {
+                    "Document ID": "AXWYa9vtVPWQeOGgry1J",
+                    "STEM1": "Science: (Biology): Weather (Problem at hand), can be seen through a biological lense on how it impacts agriculture, Our Bodies and etc causing us to reflect on the disadvantages it promotes. ",
+                    "STEM2": "s2",
+                    "STEM3": "s3",
+                    "STEM4": "s4",
+                    "STEM5": "s5",
+                    "SocialOutcome1": "so1",
+                    "SocialOutcome2": "so2",
+                    "SocialOutcome3": "so3",
+                    "SocialOutcome4": "so4",
+                    "SocialOutcome5": "so5",
+                    "SocialOutcome6": "so6",
+                    "SocialOutcome7": "so7",
+                    "beneficiary": "user",
+                    "createdBy": "author",
+                    "projectTitle": "project1",
+                    "solveWhatProblem": "provide a way"
+                },
+                {
+                    "Document ID": "Pwokj9phAW4W7Np0WnMT",
+                    "STEM1": "Website design related engineering",
+                    "STEM2": "numbers",
+                    "STEM3": "science",
+                    "STEM4": "",
+                    "STEM5": "",
+                    "SocialOutcome1": "Reduces negative effects of climate change",
+                    "SocialOutcome2": "Promotes a clean city for residents",
+                    "SocialOutcome3": "Cleaner air",
+                    "SocialOutcome4": "Happy people",
+                    "SocialOutcome5": "",
+                    "SocialOutcome6": "",
+                    "SocialOutcome7": "",
+                    "beneficiary": "20-30 YEAR OLD WORKING PROFESSIONALS",
+                    "createdBy": "SQUAD 8",
+                    "projectTitle": "TEST TUESDAY",
+                    "solveWhatProblem": "REDUCE CONSUMPTION OF PLASTIC"
+                },
+                {
+                    "Document ID": "Pwokj9phAW4W7Np0WnMT",
+                    "STEM1": "Website design related engineering",
+                    "STEM2": "numbers",
+                    "STEM3": "science",
+                    "STEM4": "",
+                    "STEM5": "",
+                    "SocialOutcome1": "Reduces negative effects of climate change",
+                    "SocialOutcome2": "Promotes a clean city for residents",
+                    "SocialOutcome3": "Cleaner air",
+                    "SocialOutcome4": "Happy people",
+                    "SocialOutcome5": "",
+                    "SocialOutcome6": "",
+                    "SocialOutcome7": "",
+                    "beneficiary": "20-30 YEAR OLD WORKING PROFESSIONALS",
+                    "createdBy": "SQUAD 8",
+                    "projectTitle": "TEST TUESDAY",
+                    "solveWhatProblem": "REDUCE CONSUMPTION OF PLASTIC"
+                }
+            ];
+
+            // Function to display data on the HTML page
+            function displayData(projects) {
+                const gardenContainer = document.getElementById('gardenContainer');
+                
+                if (gardenContainer) {
+                    gardenContainer.innerHTML = ''; // Clear previous content
+                    projects.forEach(project => {
+                        // Create a div to hold the project container
+                        const projectContainer = document.createElement('div');
+                        projectContainer.classList.add('project-container');
+
+                        // Create the image element
+                        const img = document.createElement('img');
+                        img.src = 'Assets/images/stemFlower.png'; // Replace with the actual image path or URL
+                        img.width = 150;
+                        img.alt = project.projectTitle;
+
+                        // Create the project info div
+                        const projectInfo = document.createElement('div');
+                        projectInfo.classList.add('project-info');
+                        projectInfo.innerHTML = `
+                            <p>Project Title: ${project.projectTitle}</p>
+                            <button class="learn-more-btn" data-id="${project["Document ID"]}">Learn More</button>
+                        `;
+
+                        // Append the image and project info to the project container
+                        projectContainer.appendChild(img);
+                        projectContainer.appendChild(projectInfo);
+
+                        // Append the project container to the main container
+                        gardenContainer.appendChild(projectContainer);
+                    });
+
+                    // Attach event listeners to the "Learn More" buttons
+                    document.querySelectorAll('.learn-more-btn').forEach(button => {
+                        button.addEventListener('click', (event) => {
+                            window.location.href = 'summary3.html';
+                        });
+                    });
+                }
+            }
+
+            // Display the data when the document is loaded
+            displayData(projects);
+        });
+    </script>
+</body>
+</html>
